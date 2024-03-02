@@ -6,6 +6,7 @@
 - Remove `Promise.void` type (can now be expressed as `unit Promise.t`).
 - Add a `Make` functor to create modules with a custom type representation.
 - Give the `error` type a public `Ojs.t` type representation.
+- Remove js_of_ocaml-ppx dependency.
 
 ## v0.3.1
 
