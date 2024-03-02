@@ -26,6 +26,7 @@
   js_of_ocaml
   (gen_js_api
    (>= 1.0.8))
+  (lwt :with-test)
   (webtest :with-test)
   (webtest-js :with-test)
   (conf-npm :with-test)))
