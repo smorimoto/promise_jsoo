@@ -1,4 +1,4 @@
-## Unreleased
+## v0.4.0
 
 - Add `promise_jsoo_lwt` library and `Promise_lwt` module to convert between JS
   promises and Lwt promises
