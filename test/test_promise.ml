@@ -111,7 +111,7 @@ module Tests (P : Promise.S) = struct
 
     let finally_tests =
       match finally_method with
-      | None   -> []
+      | None -> []
       | Some _ ->
         [ "test_finally_resolved" >:~ test_finally_resolved
         ; "test_finally_rejected" >:~ test_finally_rejected
@@ -392,7 +392,7 @@ module Tests (P : Promise.S) = struct
         let promise = P.reject @@ [%js.of: string] "error" in
         let fulfilled (value : ('a, P.error) Result.t) =
           let expected = function
-            | Ok _         -> false
+            | Ok _ -> false
             | Error reason -> [%js.to: string] reason = "error"
           in
           finish (fun () -> assert_true (expected value));
@@ -504,7 +504,7 @@ module Tests (P : Promise.S) = struct
         let promises = [| 1; 2; 3; 4; 5 |] in
         let f = function
           | (1 | 3 | 5) as x -> P.Option.return x
-          | _                -> P.return None
+          | _ -> P.return None
         in
         let fulfilled value =
           finish (fun () -> assert_equal value [| 1; 3; 5 |]);
@@ -540,7 +540,7 @@ module Tests (P : Promise.S) = struct
         let promises = [ 1; 2; 3; 4; 5 ] in
         let f = function
           | (1 | 3 | 5) as x -> P.Option.return x
-          | _                -> P.return None
+          | _ -> P.return None
         in
         let fulfilled value =
           finish (fun () -> assert_equal value [ 1; 3; 5 ]);

@@ -19,7 +19,7 @@ let to_promise lwt_promise =
   Promise.make @@ fun ~resolve ~reject ->
   let reject = function
     | Promise_error e -> reject e
-    | e               -> reject (Obj.magic e : Promise.error)
+    | e -> reject (Obj.magic e : Promise.error)
   in
   Lwt.on_any lwt_promise resolve reject
 

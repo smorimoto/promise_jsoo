@@ -78,7 +78,7 @@ module Make (T : P) : S with type 'a t = 'a T.t = struct
           let open Syntax in
           let* res = f arr.(i) in
           match res with
-          | None        -> loop (succ i)
+          | None -> loop (succ i)
           | Some _ as x -> return x
       in
       loop 0
@@ -92,12 +92,12 @@ module Make (T : P) : S with type 'a t = 'a T.t = struct
 
   module List = struct
     let rec find_map (f : 'a -> 'b option t) = function
-      | []      -> return None
+      | [] -> return None
       | x :: xs -> (
         let open Syntax in
         let* res = f x in
         match res with
-        | None        -> find_map f xs
+        | None -> find_map f xs
         | Some _ as x -> return x)
 
     let filter_map (f : 'a -> 'b option t) (xs : 'a list) : 'b list t =
@@ -110,17 +110,17 @@ module Make (T : P) : S with type 'a t = 'a T.t = struct
     let iter f =
       bind @@ function
       | Some x -> return (f x : unit)
-      | None   -> return ()
+      | None -> return ()
 
     let map f =
       bind @@ function
       | Some x -> return (Some (f x))
-      | None   -> return None
+      | None -> return None
 
     let bind f =
       bind @@ function
       | Some x -> f x
-      | None   -> return None
+      | None -> return None
 
     let return x = return (Some x)
 
@@ -143,17 +143,17 @@ module Make (T : P) : S with type 'a t = 'a T.t = struct
 
     let iter ?(ok = ignore) ?(error = ignore) =
       bind @@ function
-      | Ok o    -> return (ok o)
+      | Ok o -> return (ok o)
       | Error e -> return (error e)
 
     let map f =
       bind @@ function
-      | Ok o    -> return (Ok (f o))
+      | Ok o -> return (Ok (f o))
       | Error e -> return (Error e)
 
     let bind f =
       bind @@ function
-      | Ok o    -> f o
+      | Ok o -> f o
       | Error e -> return (Error e)
 
     let return x = return (Ok x)

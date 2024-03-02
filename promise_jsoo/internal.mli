@@ -30,7 +30,7 @@ module Promise (T : Promise_intf.P) : sig
 
   val then_ :
     'a t -> fulfilled:('a -> 'b t) -> ?rejected:(Ojs.t -> 'b t) -> unit -> 'b t
-    [@@js.call]
+  [@@js.call]
 
   val finally : 'a t -> (unit -> unit) -> 'a t [@@js.call]
 
