@@ -1,4 +1,4 @@
-## Unreleased
+## v0.4.1
 
 - Require `lwt` when running `promise_jsoo` tests.
 
