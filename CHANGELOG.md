@@ -2,7 +2,6 @@
 
 ## Unreleased
 
--   Use `promise Js.t` type for compatibility with Js_of_ocaml bindings
 -   Add `promise_jsoo_lwt` library and `Promise_lwt` module to convert between
     JS promises and Lwt promises
 -   Change internal representation to `Ojs.t` and make `Promise.t` abstract.
