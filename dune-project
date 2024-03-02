@@ -11,6 +11,8 @@
 (source
  (github mnxn/promise_jsoo))
 
+(documentation https://mnxn.github.io/promise_jsoo/)
+
 (generate_opam_files true)
 
 (implicit_transitive_deps false)

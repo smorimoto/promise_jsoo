@@ -1,31 +1,29 @@
-# Change Log
-
 ## Unreleased
 
--   Add `promise_jsoo_lwt` library and `Promise_lwt` module to convert between
-    JS promises and Lwt promises
--   Change internal representation to `Ojs.t` and make `Promise.t` abstract.
--   Remove `Promise.void` type (can now be expressed as `unit Promise.t`).
--   Add a `Make` functor to create modules with a custom type representation.
--   Give the `error` type a public `Ojs.t` type representation.
+- Add `promise_jsoo_lwt` library and `Promise_lwt` module to convert between JS
+  promises and Lwt promises
+- Change internal representation to `Ojs.t` and make `Promise.t` abstract.
+- Remove `Promise.void` type (can now be expressed as `unit Promise.t`).
+- Add a `Make` functor to create modules with a custom type representation.
+- Give the `error` type a public `Ojs.t` type representation.
 
-## 0.3.1
+## v0.3.1
 
--   Reduce the size of .js binaries produced by using this library by not
-    linking the ppx toolchain. (#3)
+- Reduce the size of .js binaries produced by using this library by not linking
+  the ppx toolchain. (#3)
 
-## 0.3.0
+## v0.3.0
 
--   Fix `Promise.Array.find_map` and `Promise.List.find_map` raising
-    `Assert_failure` (#1)
--   Stop calling the function once `Promise.Array.find_map` and
-    `Promise.List.find_map` find a value (#1)
+- Fix `Promise.Array.find_map` and `Promise.List.find_map` raising
+  `Assert_failure` (#1)
+- Stop calling the function once `Promise.Array.find_map` and
+  `Promise.List.find_map` find a value (#1)
 
-## 0.2.0
+## v0.2.0
 
--   Add gen_js_api conversion function for `error` type
--   Fix gen_js_api conversion function for promise type
+- Add gen_js_api conversion function for `error` type
+- Fix gen_js_api conversion function for promise type
 
-## 0.1.0
+## v0.1.0
 
--   Initial release
+- Initial release

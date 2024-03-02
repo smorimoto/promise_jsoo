@@ -5,6 +5,7 @@ maintainer: ["Max Lantas <mnxndev@outlook.com>"]
 authors: ["Max Lantas <mnxndev@outlook.com>"]
 license: "MIT"
 homepage: "https://github.com/mnxn/promise_jsoo"
+doc: "https://mnxn.github.io/promise_jsoo/"
 bug-reports: "https://github.com/mnxn/promise_jsoo/issues"
 depends: [
   "dune" {>= "2.7"}
