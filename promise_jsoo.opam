@@ -12,12 +12,12 @@ depends: [
   "ocaml" {>= "4.08"}
   "js_of_ocaml"
   "gen_js_api" {>= "1.0.8"}
-  "lwt" {with-test}
   "webtest" {with-test}
   "webtest-js" {with-test}
   "conf-npm" {with-test}
   "odoc" {with-doc}
 ]
+dev-repo: "git+https://github.com/mnxn/promise_jsoo.git"
 build: [
   ["dune" "subst"] {dev}
   [
@@ -28,8 +28,7 @@ build: [
     "-j"
     jobs
     "@install"
-    "@runtest" {with-test}
+    "@%{name}%/runtest" {with-test}
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/mnxn/promise_jsoo.git"

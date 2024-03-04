@@ -1,0 +1,12 @@
+(executable
+ (name test_promise)
+ (libraries promise_jsoo ojs webtest webtest-js)
+ (preprocess
+  (pps gen_js_api.ppx))
+ (modes js))
+
+(rule
+ (alias runtest)
+ (deps test_promise.bc.js)
+ (action
+  (run node test_promise.bc.js)))

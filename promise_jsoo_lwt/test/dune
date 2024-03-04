@@ -1,5 +1,5 @@
 (executable
- (name test_promise)
+ (name test_promise_lwt)
  (libraries promise_jsoo promise_jsoo_lwt lwt ojs webtest webtest-js)
  (preprocess
   (pps gen_js_api.ppx))
@@ -7,6 +7,6 @@
 
 (rule
  (alias runtest)
- (deps test_promise.bc.js)
+ (deps test_promise_lwt.bc.js)
  (action
-  (run node test_promise.bc.js)))
+  (run node test_promise_lwt.bc.js)))

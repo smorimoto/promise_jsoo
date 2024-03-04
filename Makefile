@@ -12,5 +12,6 @@ clean:
 .PHONY: clean
 
 test:
-	dune test
+	dune test promise_jsoo
+	dune test promise_jsoo_lwt
 .PHONY: test
