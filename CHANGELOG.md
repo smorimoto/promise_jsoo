@@ -1,4 +1,4 @@
-## Unreleased
+## v0.4.2
 
 - Separate tests by library and remove `lwt` dependency from `promise_jsoo`
   tests.
